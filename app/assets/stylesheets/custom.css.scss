@@ -1,0 +1,35 @@
+@import "bootstrap";
+@import "font-awesome";
+
+/* Variables, mixins, etc.. */
+@mixin background-tile {
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  padding: 1.5em 1.25em;
+}
+
+/* Signup form styles */
+.signup-form {
+  @include background-tile;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+// Login form styles
+.login-form {
+  @include background-tile;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+// Edit form styles
+.edit-form {
+  @include background-tile;
+  h2 {
+    margin-top: 0;
+  }
+}
