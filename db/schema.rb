@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_082822) do
+ActiveRecord::Schema.define(version: 2020_04_27_120228) do
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "type", limit: 30
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
 
   create_table "course_users", force: :cascade do |t|
     t.integer "user_id"
     t.integer "sourse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_course_users_on_slug", unique: true
     t.index ["sourse_id"], name: "index_course_users_on_sourse_id"
     t.index ["user_id"], name: "index_course_users_on_user_id"
   end
@@ -30,7 +42,9 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["lesson_id"], name: "index_courses_on_lesson_id"
+    t.index ["slug"], name: "index_courses_on_slug", unique: true
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -40,7 +54,9 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["exercise_id"], name: "index_exercise_answers_on_exercise_id"
+    t.index ["slug"], name: "index_exercise_answers_on_slug", unique: true
     t.index ["user_id"], name: "index_exercise_answers_on_user_id"
   end
 
@@ -49,7 +65,20 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["lesson_id"], name: "index_exercises_on_lesson_id"
+    t.index ["slug"], name: "index_exercises_on_slug", unique: true
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
   create_table "homework_details", force: :cascade do |t|
@@ -57,8 +86,10 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "exercise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["exercise_id"], name: "index_homework_details_on_exercise_id"
     t.index ["homework_id"], name: "index_homework_details_on_homework_id"
+    t.index ["slug"], name: "index_homework_details_on_slug", unique: true
   end
 
   create_table "homework_results", force: :cascade do |t|
@@ -67,8 +98,10 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "homeworl_detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["exercise_answer_id"], name: "index_homework_results_on_exercise_answer_id"
     t.index ["homeworl_detail_id"], name: "index_homework_results_on_homeworl_detail_id"
+    t.index ["slug"], name: "index_homework_results_on_slug", unique: true
   end
 
   create_table "homeworks", force: :cascade do |t|
@@ -76,7 +109,9 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["lesson_id"], name: "index_homeworks_on_lesson_id"
+    t.index ["slug"], name: "index_homeworks_on_slug", unique: true
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -86,7 +121,9 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["course_id"], name: "index_lessons_on_course_id"
+    t.index ["slug"], name: "index_lessons_on_slug", unique: true
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
@@ -106,7 +143,9 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.integer "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["lesson_id"], name: "index_user_lessons_on_lesson_id"
+    t.index ["slug"], name: "index_user_lessons_on_slug", unique: true
     t.index ["user_id"], name: "index_user_lessons_on_user_id"
   end
 
@@ -119,8 +158,10 @@ ActiveRecord::Schema.define(version: 2020_04_27_082822) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "slug"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
