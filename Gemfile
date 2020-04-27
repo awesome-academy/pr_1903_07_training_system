@@ -15,6 +15,7 @@ gem "friendly_id", "~> 5.3"
 gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
+gem "pry"
 
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"

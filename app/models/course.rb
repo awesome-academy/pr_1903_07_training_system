@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  belongs_to :lesson
+  has_many :lessons
   belongs_to :user
   resourcify
 end
