@@ -1,0 +1,13 @@
+<%= form_for(@course) do |f| %>
+  <div class="field">
+    <%= f.label :course_name %>
+    <%= f.text_field :course_name, class: "form-control" %>
+  </div>
+  <div class="field mt-3">
+    <%= f.label :description %>
+    <%= f.cktext_area :description, class: "form-control" %>
+  </div>
+  <div class="field mt-2">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>
