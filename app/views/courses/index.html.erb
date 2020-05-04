@@ -1,12 +1,15 @@
 <div class="row mt-3">
   <div class="col-md-12">
     <div class="row">
-      <div class="col-md-6">
-        <h2>All Courses</h2>
+      <div class="col-md-12">
+        <h2 class="text-center"><%= t(".all_course") %></h2>
       </div>
-      <div class="col-md-6">
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-6">
         <% if has_role?(:admin) %>
-          <%= link_to "New course", new_course_path, class: "btn btn-outline-primary float-right" %>
+          <%= link_to t(".new_course"), new_course_path, 
+            class: "btn btn-outline-primary float-right" %>
         <% end %>
       </div>
     </div>
@@ -15,13 +18,17 @@
   <div class="col-md-12">
     <div class="row">
       <% @courses.each do |course| %>
-        <div class="col-md-6">
+        <div class="col-md-6 jumbotron mt-3">
           <%= link_to course.course_name, course %>
-          <%= course.description.html_safe %>
+          <%= link_to course.description.html_safe, course, 
+            class: "text-muted" %>
           
           <% if has_role?(:admin) %>
-            <%= link_to "Edit course", edit_course_path(course), class: "btn btn-outline-secondary" %>
-            <%= link_to "Delete course", course, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+            <%= link_to t(".edit_course"), edit_course_path(course), 
+              class: "btn btn-outline-secondary" %>
+            <%= link_to t(".delete_course"), course, method: :delete,
+              data: { confirm: "Are you sure?" }, 
+              class: "btn btn-outline-danger" %>
           <% end %>
         </div>
       <% end %>
