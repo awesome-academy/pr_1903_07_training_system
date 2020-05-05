@@ -1,0 +1,28 @@
+vi:
+  layouts:
+    header:
+      home: "Trang Chủ"
+    login_nav:
+      setting_user: "Cài đặt người dùng"
+      profile: "Hồ sơ cá nhân"
+      log_out: "Đăng xuất"
+    nav: 
+      sign_up: "Đăng ký"
+      log_in: "Đăng nhập"
+  
+  # courses
+  courses: 
+    form: 
+      course_name: "Tên khoá học"
+      description: "Mô tả khoá học"
+    edit: 
+      update_course: "Cập nhật khoá học"
+      sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."
+    index:
+      all_course: "Toàn bộ khoá học"
+      new_course: "Tạo khoá học mới"
+      edit_course: "Cập nhật khoá học"
+      delete_course: "Xoá khoá học"
+    new: 
+      create_course: "Tạo khoá học mới"
+      sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."

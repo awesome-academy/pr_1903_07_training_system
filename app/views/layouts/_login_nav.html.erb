@@ -5,11 +5,11 @@
   </a>
 
   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <%= link_to "Setting user", edit_user_registration_path, 
+    <%= link_to t(".setting_user"), edit_user_registration_path, 
       class: "dropdown-item" %>
-    <%= link_to "Profile", "#", class: "dropdown-item" %>
+    <%= link_to t(".profile"), "#", class: "dropdown-item" %>
     <div class="dropdown-divider"></div>
-    <%= link_to "Log out",  destroy_user_session_path, 
+    <%= link_to t(".log_out"),  destroy_user_session_path, 
       method: :delete, class: "dropdown-item" %>
   </div>
 </li>
