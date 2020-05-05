@@ -11,7 +11,11 @@ en:
       log_in: "Log In"
   
   # courses
-  courses: 
+  courses:
+    course_created : "Course created!"
+    course_updated: "Course updated!"
+    course_deleted: "Course deleted"
+    does_not: "Course does not exist!"
     form: 
       course_name: "course name"
       description: "description"
@@ -25,5 +29,22 @@ en:
       delete_course: "Delete course"
     new: 
       create_course: "Create course"
+      sorry: "Sorry! You can not access this page"
+
+  # Lessons
+  lessons:
+    lesson_created: "Lesson created!"
+    lesson_updated: "Lesson updated!"
+    lesson_deleted: "Lesson deleted!"
+    form: 
+      title: "Title"
+      content: "Content"
+      course: "Course"
+      select_course: "Select course"
+    edit: 
+      update_lesson: "Update lesson"
+      sorry: "Sorry! You can not access this page"
+    new:
+      create_lesson: "Create lesson"
       sorry: "Sorry! You can not access this page"
 
