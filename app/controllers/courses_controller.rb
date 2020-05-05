@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @courses = Course.all.order("created_at desc")
+    @courses = Course.all
   end
   
   def new
@@ -13,19 +13,23 @@ class CoursesController < ApplicationController
   def create 
     @course = current_user.courses.build course_params
     if @course.save
+      flash[:success] = t(".course_created")
       redirect_to @course
     else
       render :new 
     end
   end
 
-  def show; end
+  def show
+    @lessons = @course.lessons
+  end
 
   def edit; end
 
   def update
     if @course.save 
-      redirect_to root_course
+      flash[:success] = t(".course_updated")
+      redirect_to @course
     else
       render :edit
     end
@@ -33,6 +37,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy 
+    flash[:danger] = t(".course_deleted")
     redirect_to @course
   end
 
@@ -45,7 +50,7 @@ class CoursesController < ApplicationController
     def find_course
       @course = Course.find_by id: params[:id]
       unless @course 
-        flash[:danger] = "Course does not exist!"
+        flash[:danger] = t(".does_not")
         redirect_to root_path
       end
     end
