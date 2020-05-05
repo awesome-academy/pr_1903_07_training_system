@@ -1,2 +1,20 @@
-<h1>Show all</h1>
-<%= @course.course_name %>
+<div class="row jumbotron mt-3">
+  <div class="col-md-8 offset-md-2">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <h3>
+          <%= @course.course_name %>
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7 offset-md-3">
+         <% @lessons.each do |lesson| %>
+          <p>
+            <%= link_to lesson.title, lesson_path(id: lesson.id, course_id: @course.id) %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
