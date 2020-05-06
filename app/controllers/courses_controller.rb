@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
     @course = current_user.courses.build course_params
     if @course.save
       flash[:success] = t(".course_created")
-      redirect_to @course
+      redirect_to root_path
     else
       render :new 
     end
@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
   def update
     if @course.save 
       flash[:success] = t(".course_updated")
-      redirect_to @course
+      redirect_to root_path
     else
       render :edit
     end

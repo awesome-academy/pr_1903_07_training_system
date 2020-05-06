@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_courses, only: [:show, :new, :edit]
+  before_action :find_courses, only: [:show, :new, :edit, :create]
   before_action :find_course, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -13,20 +13,22 @@ class LessonsController < ApplicationController
 
     if @lesson.save 
       flash[:success] = t(".lesson_created")
-      redirect_to @lesson 
+      redirect_to lesson_path(id: @lesson.id, course_id: @lesson.course.id)
     else
       render :new 
     end
   end
 
-  def show; end
+  def show
+    @lessons = Lesson.all
+  end
 
   def edit; end 
   
   def update
     if @lesson.update lesson_params 
       flash[:success] = t(".lesson_updated")
-      redirect_to lesson 
+      redirect_to lesson_path(id: @lesson.id, course_id: @lesson.course.id) 
     else
       render :edit 
     end
@@ -35,7 +37,7 @@ class LessonsController < ApplicationController
   def destroy
     @lesson.destroy
     flash[:success] = t(".lesson_deleted")
-    redirect_to lesson 
+    redirect_to course_path
   end
 
   private 

@@ -1,0 +1,17 @@
+<% if object.errors.any? %>
+  <div class="row">
+    <div class="col-md-12">
+      <h5 class="text-danger">
+        <i class="fa fa-exclamation-triangle text-danger"></i> 
+        <%= t(".found_errors_while_saving") %>
+      </h5>
+    </div>
+    <div class="col-md-12">
+      <ul class="text-warning">
+        <% object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

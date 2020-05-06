@@ -1,4 +1,12 @@
 vi:
+  activerecord:
+    errors:
+      models:
+        lesson:
+          attributes:
+            course:
+              required: "cần được chọn trước khi tạo"
+
   layouts:
     header:
       home: "Trang Chủ"
@@ -10,6 +18,11 @@ vi:
       sign_up: "Đăng ký"
       log_in: "Đăng nhập"
   
+  # Shared
+  shared:
+    errors:
+      found_errors_while_saving: "Tìm thấy lấy trong quá trình lưu"
+
   # courses
   courses: 
     course_created : "Bạn vừa tạo khoá học!"
