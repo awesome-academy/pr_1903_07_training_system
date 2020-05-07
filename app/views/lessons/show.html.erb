@@ -1,24 +1,22 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="text-center"><%= @course.course_name %></h3> 
+  </div>
+</div>
 <div class="row jumbotron mt-3">
-  <div class="col-md-8 offset-md-2">
-    <div class="row">
-      <div class="col-md-12">
-       <h3 class="text-center"><%= @course.course_name %></h3> 
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-7 offset-md-3">
-        <h5>
-          <%= @lesson.title %>
-        </h5>
-        
-      </div>
-    </div>
-    <div class="row"> 
-      <div class="col-md-12">
-        <p>
-          <%= @lesson.content.html_safe %>
-        </p>
-      </div>
-    </div>
+  <div class="col-md-3 border ml-0">
+    <ul>
+      <% @lessons.each do |lesson| %>
+        <li class="list-unstyled overflow-auto">
+          <%= link_to lesson.title, 
+            lesson_path(id: lesson.id, course_id: @course.id) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <p>
+      <%= @lesson.content.html_safe %>
+    </p>
   </div>
 </div>

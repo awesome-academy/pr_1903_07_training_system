@@ -1,4 +1,5 @@
 <%= form_for(@course) do |f| %>
+  <%= render "shared/errors", object: @course %>
   <div class="field">
     <%= f.label :course_name, t(".course_name") %>
     <%= f.text_field :course_name, class: "form-control" %>

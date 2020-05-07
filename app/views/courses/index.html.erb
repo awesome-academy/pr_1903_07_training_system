@@ -1,37 +1,35 @@
 <div class="row mt-3">
   <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="text-center"><%= t(".all_course") %></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 offset-md-6">
-        <% if has_role?(:admin) %>
-          <%= link_to t(".new_course"), new_course_path, 
-            class: "btn btn-outline-primary float-right" %>
-        <% end %>
-      </div>
-    </div>
+    <h2 class="text-center"><%= t(".all_course") %></h2>
   </div>
-
+</div>
+<div class="row">
   <div class="col-md-12">
-    <div class="row ">
-      <% @courses.each do |course| %>
-        <div class="col-md-6 jumbotron mt-3">
-          <%= link_to course.course_name, course %>
-          <%= link_to course.description.html_safe, course, 
-            class: "text-muted" %>
-          
-          <% if has_role?(:admin) %>
-            <%= link_to t(".edit_course"), edit_course_path(course), 
-              class: "btn btn-outline-secondary" %>
-            <%= link_to t(".delete_course"), course, method: :delete,
-              data: { confirm: "Are you sure?" }, 
-              class: "btn btn-outline-danger" %>
-          <% end %>
-        </div>
+    <% if has_role?(:admin) %>
+      <%= link_to t(".new_course"), new_course_path, 
+        class: "btn btn-outline-primary float-right" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row ">
+  <% @courses.each do |course| %>
+    <div class="col-md-6 jumbotron mt-3">
+      <h3 class="text-center">
+        <%= link_to course.course_name, course %>
+      </h3>
+      <p>
+        <%= link_to course.description.html_safe, course, 
+          class: "text-muted" %>
+      </p>
+    
+      <% if has_role?(:admin) %>
+        <%= link_to t(".edit_course"), edit_course_path(course), 
+          class: "btn btn-outline-secondary" %>
+        <%= link_to t(".delete_course"), course, method: :delete,
+          data: { confirm: "Are you sure?" }, 
+          class: "btn btn-outline-danger" %>
       <% end %>
     </div>
-  </div>
+  <% end %>
 </div>

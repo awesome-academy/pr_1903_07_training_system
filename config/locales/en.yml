@@ -1,4 +1,12 @@
 en:
+  activerecord:
+    errors:
+      models:
+        lesson:
+          attributes:
+            course:
+              required: "Must be chosen"
+
   layouts:
     header:
       home: "Home"
@@ -10,6 +18,11 @@ en:
       sign_up: "Sign Up"
       log_in: "Log In"
   
+  # Shared
+  shared:
+    errors:
+      found_errors_while_saving: "Found errors while saving"
+
   # courses
   courses:
     course_created : "Course created!"
@@ -47,4 +60,3 @@ en:
     new:
       create_lesson: "Create lesson"
       sorry: "Sorry! You can not access this page"
-
