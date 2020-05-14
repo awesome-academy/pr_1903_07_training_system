@@ -1,0 +1,21 @@
+<%= form_for(@homework) do |f| %>
+  <div class="field">
+    <%= f.label :name, t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+   <div class="field">
+    <%= f.label :question, t(".content") %>
+    <%= f.cktext_area :question, class: "form-control" %>
+  </div>
+  <div class="field mt-3">
+    <%= f.label :lesson, t(".lesson") %>
+     <span>
+      <%= f.select :lesson_id, @lessons.map { |c| [c.title, c.id] },
+        prompt: t(".select_lesson") %>
+    </span>
+  </div>
+
+  <div class="field mt-3">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

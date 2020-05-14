@@ -5,18 +5,18 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
   end
-  
+
   def new
     @course = current_user.courses.build
   end
 
-  def create 
+  def create
     @course = current_user.courses.build course_params
     if @course.save
       flash[:success] = t(".course_created")
       redirect_to root_path
     else
-      render :new 
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
   def edit; end
 
   def update
-    if @course.save 
+    if @course.save
       flash[:success] = t(".course_updated")
       redirect_to root_path
     else
@@ -36,20 +36,20 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course.destroy 
+    @course.destroy
     flash[:danger] = t(".course_deleted")
     redirect_to @course
   end
 
   private
 
-    def course_params 
+    def course_params
       params.require(:course).permit :course_name, :description
     end
 
     def find_course
       @course = Course.find_by id: params[:id]
-      unless @course 
+      unless @course
         flash[:danger] = t(".does_not")
         redirect_to root_path
       end

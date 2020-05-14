@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_120228) do
+ActiveRecord::Schema.define(version: 2020_05_14_115930) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -81,16 +81,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_120228) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "homework_details", force: :cascade do |t|
-    t.integer "homework_id"
-    t.integer "exercise_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "slug"
-    t.index ["exercise_id"], name: "index_homework_details_on_exercise_id"
-    t.index ["homework_id"], name: "index_homework_details_on_homework_id"
-    t.index ["slug"], name: "index_homework_details_on_slug", unique: true
-  end
+# Could not dump table "homework_details" because of following StandardError
+#   Unknown type 'boolane' for column 'is_correct'
 
   create_table "homework_results", force: :cascade do |t|
     t.text "content"
@@ -110,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_120228) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.string "question"
     t.index ["lesson_id"], name: "index_homeworks_on_lesson_id"
     t.index ["slug"], name: "index_homeworks_on_slug", unique: true
   end
