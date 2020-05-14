@@ -14,25 +14,25 @@ vi:
       setting_user: "Cài đặt người dùng"
       profile: "Hồ sơ cá nhân"
       log_out: "Đăng xuất"
-    nav: 
+    nav:
       sign_up: "Đăng ký"
       log_in: "Đăng nhập"
-  
+
   # Shared
   shared:
     errors:
       found_errors_while_saving: "Tìm thấy lấy trong quá trình lưu"
 
   # courses
-  courses: 
+  courses:
     course_created : "Bạn vừa tạo khoá học!"
     course_updated: "Bạn vừa cập nhập khoá học!"
     course_deleted: "Bạn vừa xoá khoá học"
     does_not: "Khoá học không tồn tại"
-    form: 
+    form:
       course_name: "Tên khoá học"
       description: "Mô tả khoá học"
-    edit: 
+    edit:
       update_course: "Cập nhật khoá học"
       sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."
     index:
@@ -40,7 +40,7 @@ vi:
       new_course: "Tạo khoá học mới"
       edit_course: "Cập nhật khoá học"
       delete_course: "Xoá khoá học"
-    new: 
+    new:
       create_course: "Tạo khoá học mới"
       sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."
 
@@ -49,14 +49,19 @@ vi:
     lesson_created: "Khoá học vừa được tạo!"
     lesson_updated: "Khoá học vừa được cập nhật!"
     lesson_deleted: "Khoá học vừa được xoá!"
-    form: 
+    form:
       title: "Tiêu đề"
       content: "Nội dung"
       course: "Thuộc khoá học"
       select_course: "Lựa chọn khoá học"
-    edit: 
+    edit:
       update_lesson: "Cập nhập khoá học"
       sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."
     new:
       create_lesson: "Tạo khoá học"
       sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."
+  homeworks:
+    form:
+      select_lesson: "chọn khóa học"
+    new:
+      create_homework: "tạo bài tập mới"

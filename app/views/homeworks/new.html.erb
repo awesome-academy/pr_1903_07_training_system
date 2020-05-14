@@ -1,0 +1,16 @@
+<% provide :title, t(".create_homework") %>
+<% provide :button_text, t(".create_homework") %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h4 class="text-center"><%= t(".create_homework") %></h4>
+  </div>
+  <div class="col-md-12">
+    <% if has_role?(:admin) %>
+      <%= render "form" %>
+    <% else %>
+      <h5 class="text-center text-danger">
+        <%= t(".sorry") %>
+      </h5>
+    <% end %>
+  </div>
+</div>

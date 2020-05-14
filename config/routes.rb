@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     root "courses#index"
     resources :courses
     resources :lessons, except: :index
+    resources :homeworks
   end
 end
 

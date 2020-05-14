@@ -14,10 +14,10 @@ en:
       setting_user: "Setting user"
       profile: "Profile"
       log_out: "Log out"
-    nav: 
+    nav:
       sign_up: "Sign Up"
       log_in: "Log In"
-  
+
   # Shared
   shared:
     errors:
@@ -29,10 +29,10 @@ en:
     course_updated: "Course updated!"
     course_deleted: "Course deleted"
     does_not: "Course does not exist!"
-    form: 
+    form:
       course_name: "course name"
       description: "description"
-    edit: 
+    edit:
       update_course: "Update course"
       sorry: "Sorry! You can not access this page"
     index:
@@ -40,7 +40,7 @@ en:
       new_course: "New course"
       edit_course: "Edit course"
       delete_course: "Delete course"
-    new: 
+    new:
       create_course: "Create course"
       sorry: "Sorry! You can not access this page"
 
@@ -49,14 +49,19 @@ en:
     lesson_created: "Lesson created!"
     lesson_updated: "Lesson updated!"
     lesson_deleted: "Lesson deleted!"
-    form: 
+    form:
       title: "Title"
       content: "Content"
       course: "Course"
       select_course: "Select course"
-    edit: 
+    edit:
       update_lesson: "Update lesson"
       sorry: "Sorry! You can not access this page"
     new:
       create_lesson: "Create lesson"
       sorry: "Sorry! You can not access this page"
+  homeworks:
+    form:
+      select_lesson: "select lesson"
+    new:
+      create_homework: "create homework"
