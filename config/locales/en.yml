@@ -65,3 +65,11 @@ en:
       select_lesson: "select lesson"
     new:
       create_homework: "create homework"
+    show:
+
+  homework_details:
+    form:
+      content: "content"
+    new:
+      create_homework_detail: "create homework detail"
+    homework_detail_created: "homework_detail_created"

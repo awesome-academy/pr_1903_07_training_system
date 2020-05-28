@@ -38,6 +38,6 @@ class HomeworksController < ApplicationController
 
     def find_lesson
       @homework = Homework.find_by id: params[:id]
-      @lesson = Lesson.find_by id: params[:lesson_id]
+      @lesson = @homework.lesson
     end
 end

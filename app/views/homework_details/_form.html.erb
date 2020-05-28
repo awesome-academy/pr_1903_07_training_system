@@ -1,0 +1,10 @@
+<%= form_for(@homework_detail) do |f| %>
+   <div class="field">
+    <%= f.label :content, t(".content") %>
+    <%= f.cktext_area :content, class: "form-control" %>
+  </div>
+  <div class="field mt-3">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+  <%= f.hidden_field :homework_id, value: @homework_id %>
+<% end %>

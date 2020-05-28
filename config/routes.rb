@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :courses
     resources :lessons, except: :index
     resources :homeworks
+    resources :homework_details
+    resources :course_users
   end
 end
 

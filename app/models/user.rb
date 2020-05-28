@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :courses
   has_many :lessons
   has_many :homework_details
+  has_many :course_users
 end

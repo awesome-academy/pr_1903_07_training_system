@@ -1,5 +1,5 @@
 class CourseUser < ApplicationRecord
   belongs_to :user
-  belongs_to :sourse
+  belongs_to :course
   resourcify
 end
