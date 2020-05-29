@@ -65,3 +65,11 @@ vi:
       select_lesson: "chọn khóa học"
     new:
       create_homework: "tạo bài tập mới"
+    show:
+
+  homework_details:
+    form:
+      content: "nội dung"
+    new:
+      create_homework_detail: "câu trả lời"
+    homework_detail_created: "câu trả lời đã được tạo "
