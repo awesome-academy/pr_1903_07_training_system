@@ -33,3 +33,33 @@
     margin-top: 0;
   }
 }
+
+.content-page-custom {
+  padding-top: 90px;
+}
+
+body {
+  h1, h2, h3, h4, h5, p, span, b {
+    font-family: Arial !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+    font-weight: bold !important;
+  }
+}
+
+.padding-top-15 {
+  padding-top: 15px !important;
+}
+
+.image-course {
+  display: block;
+  width: 370px;
+  height: 260px;
+  overflow: hidden;
+
+  img {
+    width: 100% !important;
+  }
+}
