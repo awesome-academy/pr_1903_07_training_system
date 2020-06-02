@@ -1,35 +1,32 @@
-<div class="row mt-3">
-  <div class="col-md-12">
-    <h2 class="text-center"><%= t(".all_course") %></h2>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
+<!-- Featured Projects-->
+<section class="section section-lg bg-default text-center padding-top-15">
+  <div class="container">
+    <h2 class="wow fadeIn"><%= t(".all_course") %></h2>
     <% if has_role?(:admin) %>
-      <%= link_to t(".new_course"), new_course_path, 
+      <%= link_to t(".new_course"), new_course_path,
         class: "btn btn-outline-primary float-right" %>
     <% end %>
-  </div>
-</div>
-
-<div class="row ">
-  <% @courses.each do |course| %>
-    <div class="col-md-6 jumbotron mt-3">
-      <h3 class="text-center">
-        <%= link_to course.course_name, course %>
-      </h3>
-      <p>
-        <%= link_to course.description.html_safe, course, 
-          class: "text-muted" %>
-      </p>
-    
-      <% if has_role?(:admin) %>
-        <%= link_to t(".edit_course"), edit_course_path(course), 
-          class: "btn btn-outline-secondary" %>
-        <%= link_to t(".delete_course"), course, method: :delete,
-          data: { confirm: "Are you sure?" }, 
-          class: "btn btn-outline-danger" %>
+    <div class="row row-30 row-md-50 row-xl-70">
+      <% @courses.each do |course| %>
+        <div class="col-sm-6 col-lg-4 wow fadeIn">
+          <!-- Post Minimal-->
+          <div class="post-minimal">
+            <figure class="post-minimal-media">
+              <%= link_to course.description.html_safe, course,
+                class: "text-muted image-course" %>
+            </figure>
+            <h4 class="post-minimal-title"><a href="#"><%= link_to course.course_name, course %></a></h4>
+            </p>
+            <% if has_role?(:admin) %>
+              <%= link_to t(".edit_course"), edit_course_path(course),
+                class: "btn btn-outline-secondary" %>
+              <%= link_to t(".delete_course"), course, method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "btn btn-outline-danger" %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-</div>
+    </div><a class="button button-lg button-primary-gradient wow fadeIn" data-wow-delay=".2s" href="#"><span>view all courses</span></a>
+  </div>
+</section>
