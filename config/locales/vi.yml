@@ -10,6 +10,8 @@ vi:
   layouts:
     header:
       home: "Trang Chủ"
+      about: "Về chúng tôi"
+      contact: "Liên hệ"
     login_nav:
       setting_user: "Cài đặt người dùng"
       profile: "Hồ sơ cá nhân"
@@ -41,6 +43,7 @@ vi:
       edit_course: "Cập nhật khoá học"
       delete_course: "Xoá khoá học"
     new:
+      learn_course: "Học khoá này"
       create_course: "Tạo khoá học mới"
       sorry: "Xin lỗi! Bạn không có quyền truy nhập vào trang này."
 
