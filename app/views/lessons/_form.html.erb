@@ -4,6 +4,10 @@
     <%= f.label :title, t(".title") %>
     <%= f.text_field :title, class: "form-control" %>
   </div>
+  <div class="field">
+    <%= f.label :number, t(".number") %>
+    <%= f.number_field :number, class: "form-control" %>
+  </div>
    <div class="field">
     <%= f.label :content, t(".content") %>
     <%= f.cktext_area :content, class: "form-control" %>
@@ -14,7 +18,7 @@
       <%= f.select :course_id, @courses.map { |c| [c.course_name, c.id] },
         prompt: t(".select_course") %>
     </span>
-  </div> 
+  </div>
 
   <div class="field mt-3">
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
