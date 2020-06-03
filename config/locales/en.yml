@@ -10,6 +10,8 @@ en:
   layouts:
     header:
       home: "Home"
+      about: "About"
+      contact: "Contact"
     login_nav:
       setting_user: "Setting user"
       profile: "Profile"
@@ -41,6 +43,7 @@ en:
       edit_course: "Edit course"
       delete_course: "Delete course"
     new:
+      learn_course: "Learn course"
       create_course: "Create course"
       sorry: "Sorry! You can not access this page"
 

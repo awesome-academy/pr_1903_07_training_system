@@ -10,23 +10,26 @@
               <button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
               <!-- RD Navbar Brand-->
               <div class="rd-navbar-brand">
-                <a class="brand" href="index.html">
-                  <img class="brand-logo-dark" src=<%= image_path "grey.jpg" %> alt="" width="245" height="50">
-                  <img class="brand-logo-light" src=<%= image_path "grey.jpg" %> alt="" width="245" height="50">
-                </a>
+                <%= link_to "Training system", root_path, class: "brand" %> 
               </div>
             </div>
             <div class="rd-navbar-nav-wrap toggle-original-elements">
               <!-- RD Navbar Nav    -->
-              <ul class="rd-navbar-nav">
-                <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+              <ul class="rd-navbar-nav float-right">
+                <li class="rd-nav-item">
+                  <%= link_to t(".home"), root_path, class: "rd-nav-link text-" %>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
+                <li class="rd-nav-item">
+                  <%= link_to t(".about"), about_path, class: "rd-nav-link" %>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                <li class="rd-nav-item">
+                  <%= link_to t(".contact"), contact_path, class: "rd-nav-link" %>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                </li>
+                <% if signed_in? %>
+                  <%= render "layouts/login_nav" %>
+                <% else %>
+                  <%= render "layouts/nav" %>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -35,4 +38,3 @@
     </div>
   </header>
 </div>
-<style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>

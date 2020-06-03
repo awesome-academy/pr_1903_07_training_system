@@ -1,0 +1,71 @@
+
+<!-- Mailform-->
+<section class="section section-lg bg-default">
+  <div class="container">
+    <div class="row row-50 justify-content-xl-between flex-lg-row-reverse">
+      <div class="col-lg-4 col-xl-3">
+        <div class="row row-30 row-xl-60">
+          <div class="col-sm-4 col-lg-12">
+            <h4>Địa Chỉ</h4>
+            <p class="offset-top-1"><a class="link-default" href="#">Awesome Academy, Tầng 11 Handico Tower khu đô thị mới Mễ Trì Hạ, đường Phạm Hùng, quận Nam Từ Liêm, Hà Nội <br class="d-none d-md-block"></a></p>
+          </div>
+          <div class="col-sm-4 col-lg-12">
+            <h4>Số Điện Thoại</h4>
+            <ul class="list-0 offset-top-1">
+              <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
+              <li><a class="link-default" href="tel:#">1-800-8764-098</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-lg-12">
+            <h4>E-mails</h4>
+            <ul class="list-0 offset-top-1">
+              <li><a class="link-default" href="mailto:#">info@demolink.org</a></li>
+              <li><a class="link-default" href="mailto:#">mail@demolink.org</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <h2>Liên Lạc</h2>
+        <!-- RD Mailform-->
+        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+          <div class="row row-30">
+            <div class="col-md-6">
+              <div class="form-wrap">
+                <input class="form-input" id="contact-first-name" type="text" name="first-name" data-constraints="@Required">
+                <label class="form-label" for="contact-first-name">Họ </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-wrap">
+                <input class="form-input" id="contact-last-name" type="text" name="last-name" data-constraints="@Required">
+                <label class="form-label" for="contact-last-name">Tên</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-wrap">
+                <label class="form-label" for="contact-email">E-mail</label>
+                <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-wrap">
+                <label class="form-label" for="contact-phone">Số Điện Thoại</label>
+                <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-wrap">
+                <label class="form-label" for="contact-message">Tin nhắn</label>
+                <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="button button-lg button-primary button-raven" type="submit">Gửi</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
