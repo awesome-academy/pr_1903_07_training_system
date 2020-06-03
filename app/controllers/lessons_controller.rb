@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_courses, only: [:show, :new, :edit, :create]
   before_action :find_course, only: [:show, :edit, :update, :destroy]
+  before_action :next_lesson, only: [:show, :index]
 
   def new
     @lesson = current_user.lessons.build
@@ -53,4 +54,9 @@ class LessonsController < ApplicationController
       @lesson = Lesson.find_by id: params[:id]
       @course = Course.find_by id: params[:course_id]
     end
+    def next_lesson
+      @lesson = Lesson.find_by id: params[:id]
+      @next_lesson = Lesson.find_by id: (@lesson.id + 1)
+    end
 end
+
